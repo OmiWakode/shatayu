@@ -23,16 +23,21 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  carousel_slider:
+  curved_navigation_bar:
+  google_nav_bar:
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
-  device_preview:  0.4.5
+
 
 dev_dependencies:
+
   flutter_test:
     sdk: flutter
+
 
 
 # For information on the generic Dart part of this file, see the
