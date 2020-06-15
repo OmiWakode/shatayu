@@ -104,7 +104,7 @@ class _HomeViewLaptopState extends State<HomeViewLaptop> {
     return Scaffold(
       body: ListView(
         children: [
-      Container(
+          Container(
       color: Color.fromRGBO(46,139,87,1),
       height: height/17,
       child: Row(
@@ -130,160 +130,116 @@ class _HomeViewLaptopState extends State<HomeViewLaptop> {
         ],
       ),
     ),
-          Material(
-            child: Stack(
-          children: [
 
+          Stack(
+          children: [
             Image(
-              image: AssetImage('assets/green_2.png'),
-              fit: BoxFit.fill,
-              width: width,
-              height: height /2,
-            ),
+            image: AssetImage('assets/green_2.png'),
+            fit: BoxFit.fill,
+            width: width,
+            height: height /2,
+          ),
             Padding(
-              padding: const EdgeInsets.only(left: 25, top: 30),
-              child: Image(
-                image: AssetImage('assets/logo.png'),
-                height: 100,
-                width: 100,
+            padding: const EdgeInsets.only(left: 25, top: 30),
+            child: Image(
+              image: AssetImage('assets/logo.png'),
+              height: 100,
+              width: 100,
+            ),
+          ),
+            Padding(
+              padding: EdgeInsets.only(top: height/7, left: width/10),
+              child: Text(
+                'Dr. Madhavi\'s',
+                style: TextStyle(
+                    fontFamily: 'GreatVibes',
+                    fontWeight: FontWeight.w800,
+                    color: Colors.red,
+                    fontSize: 30),
               ),
             ),
-            Stack(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(top: height/7, left: width/10),
-                  child: Text(
-                    'Dr. Madhavi\'s',
-                    style: TextStyle(
-                        fontFamily: 'GreatVibes',
-                        fontWeight: FontWeight.w800,
-                        color: Colors.red,
-                        fontSize: 30),
-                  ),
+            Padding(
+              padding:  EdgeInsets.only(left: width/10, top: height/6),
+              child: Text(
+                'Shatayu Ayurveda Panchakarma'
+                    '\n'
+                    'Super Speciality Clinic',
+                style: TextStyle(
+                    fontFamily: 'Oswald',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 50,
+                    color: Color.fromRGBO(1, 60, 30, 1),
+              ),
+            ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: width/10, top: height/2.5),
+              child: Text('Authenittically serving since 15 years..',
+                style: TextStyle(
+                  fontFamily: 'GreatVibes',
+                  color: Color.fromRGBO(46,139,87,1),
+                  fontSize: 40,
+                  fontWeight: FontWeight.w500
+
                 ),
-                Padding(
-                  padding:  EdgeInsets.only(left: width/10, top: height/6),
-                  child: Text(
-                    'Shatayu Ayurveda Panchakarma'
-                        '\n'
-                        'Super Speciality Clinic',
-                    style: TextStyle(
-                        fontFamily: 'Oswald',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 50,
-                        color: Color.fromRGBO(1, 60, 30, 1),
-                  ),
-                ),
-                ),
-                Padding(
-                  padding:  EdgeInsets.only(left: width/10, top: height/6),
-                  child: Text(
-                    'Shatayu Ayurveda Panchakarma'
-                        '\n'
-                        'Super Speciality Clinic',
-                    style: TextStyle(
-                      fontFamily: 'Oswald',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 50,
-                      color: Color.fromRGBO(1, 60, 30, 1),
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
 
             Padding(
-          padding:  EdgeInsets.only(left: width/1.7, top: height/35, ),
-          child: Material(
-            color: Colors.transparent,
-            borderRadius: BorderRadius.circular(40),
-            child: GNav(
-                gap: 8,
-                activeColor: Colors.white,
-                iconSize: 30,
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                duration: Duration(milliseconds: 800),
-                tabBackgroundColor: Color.fromRGBO(1, 60, 30, .8),
-                tabs: [
+          padding:  EdgeInsets.only(left: width/1.7, top: height/50, ),
+              child: Material(
+                color: Colors.transparent,
+                borderRadius: BorderRadius.circular(40),
+                child: GNav(
+                  gap: 8,
+                  activeColor: Colors.white,
+                  iconSize: 30,
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                  duration: Duration(milliseconds: 800),
+                  tabBackgroundColor: Color.fromRGBO(1, 60, 30, .8),
+                  tabs: [
                   GButton(
-                    icon: Icons.home,
-                    text: 'Home',
+                  icon: Icons.home,
+                  text: 'Home',
                   ),
                   GButton(
-                    icon: Icons.filter_b_and_w,
-                    text: 'Panchakarma',
+                  icon: Icons.filter_b_and_w,
+                  text: 'Panchakarma',
                   ),
                   GButton(
-                    icon: Icons.local_hospital,
-                    text: 'Treatement',
+                  icon: Icons.local_hospital,
+                  text: 'Treatement',
                   ),
                   GButton(
-                    icon: Icons.portrait,
-                    text: 'About us',
-                  ),
-                ],
-                color: Colors.white,
-                selectedIndex: _selectedIndex,
-                onTabChange: (index) {
-
-                  if(index!=_selectedIndex){ setState(() {
-                    _selectedIndex = index;
-                  });
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => classes[_selectedIndex]
-                  ));}
-
-                }
+                  icon: Icons.portrait,
+                  text: 'About us',
                 ),
+              ],
+                    color: Colors.white,
+                    selectedIndex: _selectedIndex,
+                    onTabChange: (index) {
+
+                    if(index!=_selectedIndex){ setState(() {
+                      _selectedIndex = index;
+                    });
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => classes[_selectedIndex]
+                ));}
+
+              }
+              ),
           ),
-            ),
-
-
+          ),
 /*
-                Container(
-                  padding: EdgeInsets.only(left: 10.0),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0)
-                  ),
-                  child: Builder(
-                    builder: (BuildContext context){
-                      return Padding(
-                        padding: EdgeInsets.only(top: height/2),
-                        child: CurvedNavigationBar(
-                          index: 0,
-                          height: 50.0,
-                          items: <Widget>[
-                            Icon(Icons.home, size: 30,color: Colors.white,),
-                            Icon(Icons.filter_b_and_w, size: 30,color: Colors.white,),
-                            Icon(Icons.local_hospital, size: 30,color: Colors.white,),
-                            Icon(Icons.call, size: 30),
-                          ],
-                          color:  Colors.teal,
-                          //buttonBackgroundColor: Color.fromRGBO(1,65,30,1),
-                          backgroundColor: Colors.white,//Color.fromRGBO(59, 177, 111,1),
-                          animationCurve: Curves.easeInOut,
-                          animationDuration: Duration(milliseconds: 600),
-                          onTap: (index) {
 
-                          },
-                        ),
-                      );
-
-                    },
-
-                  ),
-                )
 
 */
           ],
-            ),
-
-
           ),
 
           SizedBox(
-    height: 20,
-    ),
+            height: 20,
+          ),
           CarouselSlider(
               items: cir,
               options:
@@ -304,8 +260,8 @@ class _HomeViewLaptopState extends State<HomeViewLaptop> {
               )
           ),
           SizedBox(
-    height: height/7.5,
-    ),
+            height: height/7.5,
+          ),
           Stack(
             children: [
               Center(
@@ -347,7 +303,6 @@ class _HomeViewLaptopState extends State<HomeViewLaptop> {
                         ),),
                     ),
                   ),
-
                   Padding(
                     padding: EdgeInsets.only(top: height/9),
                     child: Center(
@@ -460,10 +415,7 @@ class _HomeViewLaptopState extends State<HomeViewLaptop> {
                 ),
             ],
           ),
-
-
         ],
-
       ),
     );
   }
