@@ -4,11 +4,11 @@ class TopBar extends StatelessWidget {
   final double width;
   final double height;
 
-  const TopBar({Key key, this.width, this.height}) : super(key: key);
+  const TopBar({Key key,@ required this.width, this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return  Container(
       color: Color.fromRGBO(46,139,87,1),
       height: height/17,
       child: Row(
@@ -23,7 +23,7 @@ class TopBar extends StatelessWidget {
                 color: Colors.white
             ),),
           SizedBox(width: width/40),
-          Container(width: 0.2,color: Colors.white,),
+          Container(width: 0.2,color: Colors.white,height: 20,),
           SizedBox(width: width/40),
           Icon(Icons.call, color: Colors.white),
           SizedBox(width: 10),
