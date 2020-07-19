@@ -17,10 +17,11 @@ class TopBar extends StatelessWidget {
           SizedBox(width: width/20),
           Icon(Icons.home,color: Colors.white,),
           SizedBox(width: 10,),
-          Text('E-7/LIG 376,Arera Colony,Bhopal',
+          Text('E-7/LIG 376,Arera Colony, Bhopal',
             style: TextStyle(
                 fontFamily: 'Baloo',
-                color: Colors.white
+                color: Colors.white,
+              fontSize: 18
             ),),
           SizedBox(width: width/40),
           Container(width: 0.2,color: Colors.white,height: 20,),
@@ -29,7 +30,8 @@ class TopBar extends StatelessWidget {
           SizedBox(width: 10),
           Text('+91-9826092380',style: TextStyle(
               fontFamily: 'Baloo',
-              color: Colors.white
+              color: Colors.white,
+            fontSize: 18
           ),)
         ],
       ),

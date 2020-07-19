@@ -26,6 +26,9 @@ dependencies:
   carousel_slider:
   curved_navigation_bar:
   google_nav_bar:
+  url_launcher:
+  get_it:
+  flutter_icons:
 
 
   # The following adds the Cupertino Icons font to your application.
