@@ -179,14 +179,43 @@ class _HomeViewLaptopState extends State<HomeViewLaptop> {
                       borderRadius: BorderRadius.circular(10.0),
                         child: Image(image: AssetImage('assets/171.jpg'),
                         width: width/1.2,
-                        height: height*3.2/4,
+                        height: height*3.3/3,
                         fit: BoxFit.fill,)),
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(top: 8.0),
+                        padding: EdgeInsets.only( top: 8),
+                        child: Center(
+                          child:
+                          Text('About Us',
+                            softWrap: true,
+                            style: TextStyle(
+                                fontFamily: 'PathwayGothic',
+                                fontSize: 40,
+                                fontWeight: FontWeight.w700,
+                                color: Color.fromRGBO(1,65,30,1)
+                            ),),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 220,right: 220, top: 30),
+                        child: Center(
+                          child: Text('Shatayu Ayurveda Superspeciality Clinic is an  ayurveda and panchakarma centre.'
+                              'Serving ayurvedic medicinal and panchakrma treatement for more than 15 years.',
+
+                            softWrap: true,
+                            style: TextStyle(
+                                fontFamily: 'Baloo',
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500
+
+                            ),),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: height/15),
                         child: Center(
                           child: Text('Ayurveda - Treat the root cause',
                             softWrap: true,
@@ -199,7 +228,7 @@ class _HomeViewLaptopState extends State<HomeViewLaptop> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 220,right: 220, top: 30),
+                        padding: const EdgeInsets.only(left: 220,right: 220, top: 25),
                         child: Center(
                           child: Text('For health and beauty, the world has seen the ill effects of chemicals and medicines. Today man is coming back to nature. '
                               'Ayurveda is India\'s 5000 year old medical practice,which makes life healthy and balanced. '
@@ -238,7 +267,7 @@ class _HomeViewLaptopState extends State<HomeViewLaptop> {
                         )
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 220,right: 220, top: 30),
+                        padding: const EdgeInsets.only(left: 220,right: 220, top: 25),
                         child: Center(
                           child: Text('In Any other vehicle or machine ,timely '
                               'Oiling and Servicing is required.'

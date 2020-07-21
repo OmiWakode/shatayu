@@ -66,7 +66,7 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
               ),
             ),
             Padding(
-                padding: EdgeInsets.only(left: width / 7, top: 8),
+                padding: EdgeInsets.only(left: width / 9, top: 8),
                 child: Text(
                     '✣ Neck pain '
                     '\n'
@@ -101,13 +101,13 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
                   '\n'
                   '✣ Allergy'
                   '\n'
-                  '✣ Acne, Pimples, Boils',
+                  '✣ Acne, Pimples, Boils                   ',
                   style: TextStyle(fontFamily: 'Baloo', fontSize: 17,
                   fontWeight: FontWeight.w500),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: width/ 7, top: 8),
+                padding: EdgeInsets.only(left: width/ 9, top: 8),
                 child: Text(
                   '✣ Eczema'
                   '\n'
@@ -142,13 +142,13 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
                   '\n'
                   '✣ Amoebiasis'
                   '\n'
-                  '✣  IBS (Irritable Bowel Syndrome)',
+                  '✣ IBS (Irritable Bowel Syndrome)',
                   style: TextStyle(fontFamily: 'Baloo', fontSize: 17,
                       fontWeight: FontWeight.w500),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: width / 9, top: 8),
+                padding: EdgeInsets.only(left: width / 9.5, top: 8),
                 child: Text(
                   '✣ Diarrhoea (अतिसार) '
                   '\n'
@@ -181,13 +181,13 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
                   '\n'
                   '✣ Infertility (बांझपन)'
                   '\n'
-                  '✣ White Discharge',
+                  '✣ White Discharge                            ',
                   style: TextStyle(fontFamily: 'Baloo', fontSize: 17,
                       fontWeight: FontWeight.w500),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: width / 7, top: 8),
+                padding: EdgeInsets.only(left: width / 9, top: 8),
                 child: Text(
                   '✣ PCOD (हार्मोन्स संबंधी समस्या)'
                   '\n'
@@ -229,7 +229,7 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
               ),
             ),
             Padding(
-                padding: EdgeInsets.only(left: width / 7, top: 8),
+                padding: EdgeInsets.only(left: width / 9.9, top: 8),
                 child: Text(
                     '✣ Chronic cold'
                         '\n'
@@ -245,6 +245,42 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
                         fontWeight: FontWeight.w500
                     ))),
           ]),
+          SizedBox(
+            height: height/8,
+          ),
+          Center(
+            child: Container(
+              width: width/2,
+              height: 0.5,
+              color: Colors.red,
+            ),
+          ),
+          SizedBox(
+            height: height/20,
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Specially for pregnant women and infants',
+                style: TextStyle(
+                    fontFamily: 'Baloo',
+                    fontSize: 18,
+                    color: Colors.red,//Color.fromRGBO(46, 139, 87, 1),
+                    fontWeight: FontWeight.w700),
+              ),
+              Text(
+                '\n'
+                '✣ Garbh Sanskar (गर्भ संस्कार)- For better development of the child in the womb'
+                    '\n'
+                    '✣ Suvarna Prashana(सुवर्ण प्राशन संस्कार) (for 0- 8 year kids): For increasing the child\'s immunity and intelligence',
+                softWrap: true,
+                style: TextStyle(fontFamily: 'Baloo', fontSize: 17,
+                    fontWeight: FontWeight.w500),
+              ),
+            ],
+          ),
+
           Image(
             image: AssetImage('assets/pngfuel.com.bottom.png'),
             width: width,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:shatayu/ui/views/about_us/about_us_laptop.dart';
+import 'package:shatayu/ui/views/contact_us/contact_us_laptop.dart';
 import 'package:shatayu/ui/views/home/home_view_laptop.dart';
 import 'package:shatayu/ui/views/panchakarma/panchakarma_laptop.dart';
 import 'package:shatayu/ui/views/treatement/treatement_laptop.dart';
@@ -23,7 +23,7 @@ class _NavBarState extends State<NavBar> {
     HomeViewLaptop(),
     TreatementLaptop(),
     PanchakarmaLaptop(),
-    AboutUsLaptop()
+    ContactUsLaptop()
 
   ];
   @override
@@ -58,7 +58,7 @@ class _NavBarState extends State<NavBar> {
                   ),
                   GButton(
                     icon: Icons.portrait,
-                    text: 'About us',
+                    text: 'Contact/Reach us',
                   )
                 ],
                 selectedIndex: _selectedindex,
