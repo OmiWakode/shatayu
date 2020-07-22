@@ -14,7 +14,7 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
     var width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(187,255,168,0.8),
+      backgroundColor: Color.fromRGBO(187, 255, 168, 0.8),
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(height / 17),
           child: TopBar(height: height, width: width)),
@@ -30,10 +30,13 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
             child: Text(
               'The best treatment on all the following diseases by valuable Ayurvedic medicine and Panchakarma therapy'
               '\n'
-                  ' as described in the Ayurveda Shastra:'
-                  '\n',
-              style: TextStyle(fontFamily: 'Baloo', fontSize: 20, fontWeight: FontWeight.w700,
-              color: Color.fromRGBO(1, 60, 30, 1)),
+              ' as described in the Ayurveda Shastra:'
+              '\n',
+              style: TextStyle(
+                  fontFamily: 'Baloo',
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                  color: Color.fromRGBO(1, 60, 30, 1)),
               softWrap: true,
             ),
           ),
@@ -44,7 +47,7 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
               style: TextStyle(
                   fontFamily: 'Baloo',
                   fontSize: 18,
-                  color: Colors.red,//Color.fromRGBO(46, 139, 87, 1),
+                  color: Colors.red, //Color.fromRGBO(46, 139, 87, 1),
                   fontWeight: FontWeight.w700),
             ),
           ),
@@ -61,7 +64,9 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
                 '✣ Back ache'
                 '\n'
                 '✣ Rheumatoid Arthritis (गठिया)',
-                style: TextStyle(fontFamily: 'Baloo', fontSize: 17,
+                style: TextStyle(
+                    fontFamily: 'Baloo',
+                    fontSize: 17,
                     fontWeight: FontWeight.w500),
               ),
             ),
@@ -78,8 +83,7 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
                     style: TextStyle(
                         fontFamily: 'Baloo',
                         fontSize: 17,
-                        fontWeight: FontWeight.w500
-                        ))),
+                        fontWeight: FontWeight.w500))),
           ]),
           Padding(
             padding: EdgeInsets.only(left: width / 10, top: 12),
@@ -88,7 +92,7 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
               style: TextStyle(
                   fontFamily: 'Baloo',
                   fontSize: 18,
-                  color: Colors.red,//Color.fromRGBO(46, 139, 87, 1),
+                  color: Colors.red, //Color.fromRGBO(46, 139, 87, 1),
                   fontWeight: FontWeight.w700),
             ),
           ),
@@ -102,19 +106,23 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
                   '✣ Allergy'
                   '\n'
                   '✣ Acne, Pimples, Boils                   ',
-                  style: TextStyle(fontFamily: 'Baloo', fontSize: 17,
-                  fontWeight: FontWeight.w500),
+                  style: TextStyle(
+                      fontFamily: 'Baloo',
+                      fontSize: 17,
+                      fontWeight: FontWeight.w500),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: width/ 9, top: 8),
+                padding: EdgeInsets.only(left: width / 9, top: 8),
                 child: Text(
                   '✣ Eczema'
                   '\n'
                   '✣ Herpes'
                   '\n'
                   '✣ Wrinkles, Dark Spots',
-                  style: TextStyle(fontFamily: 'Baloo', fontSize: 17,
+                  style: TextStyle(
+                      fontFamily: 'Baloo',
+                      fontSize: 17,
                       fontWeight: FontWeight.w500),
                 ),
               ),
@@ -127,7 +135,7 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
               style: TextStyle(
                   fontFamily: 'Baloo',
                   fontSize: 18,
-                  color: Colors.red,//Color.fromRGBO(46, 139, 87, 1),
+                  color: Colors.red, //Color.fromRGBO(46, 139, 87, 1),
                   fontWeight: FontWeight.w700),
             ),
           ),
@@ -143,7 +151,9 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
                   '✣ Amoebiasis'
                   '\n'
                   '✣ IBS (Irritable Bowel Syndrome)',
-                  style: TextStyle(fontFamily: 'Baloo', fontSize: 17,
+                  style: TextStyle(
+                      fontFamily: 'Baloo',
+                      fontSize: 17,
                       fontWeight: FontWeight.w500),
                 ),
               ),
@@ -155,7 +165,9 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
                   '✣ Ulcera (पेट के व्रण)'
                   '\n'
                   '✣ Acidity (अम्लपित्त​)',
-                  style: TextStyle(fontFamily: 'Baloo', fontSize: 17,
+                  style: TextStyle(
+                      fontFamily: 'Baloo',
+                      fontSize: 17,
                       fontWeight: FontWeight.w500),
                 ),
               ),
@@ -168,7 +180,7 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
               style: TextStyle(
                   fontFamily: 'Baloo',
                   fontSize: 18,
-                  color: Colors.red,//Color.fromRGBO(46, 139, 87, 1),
+                  color: Colors.red, //Color.fromRGBO(46, 139, 87, 1),
                   fontWeight: FontWeight.w700),
             ),
           ),
@@ -182,7 +194,9 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
                   '✣ Infertility (बांझपन)'
                   '\n'
                   '✣ White Discharge                            ',
-                  style: TextStyle(fontFamily: 'Baloo', fontSize: 17,
+                  style: TextStyle(
+                      fontFamily: 'Baloo',
+                      fontSize: 17,
                       fontWeight: FontWeight.w500),
                 ),
               ),
@@ -194,7 +208,9 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
                   '✣ Ovarian Cyst'
                   '\n'
                   '✣ Uterine inflammation and lumps',
-                  style: TextStyle(fontFamily: 'Baloo', fontSize: 17,
+                  style: TextStyle(
+                      fontFamily: 'Baloo',
+                      fontSize: 17,
                       fontWeight: FontWeight.w500),
                 ),
               ),
@@ -207,7 +223,7 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
               style: TextStyle(
                   fontFamily: 'Baloo',
                   fontSize: 18,
-                  color: Colors.red,//Color.fromRGBO(46, 139, 87, 1),
+                  color: Colors.red, //Color.fromRGBO(46, 139, 87, 1),
                   fontWeight: FontWeight.w700),
             ),
           ),
@@ -216,15 +232,17 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
               padding: EdgeInsets.only(left: width / 9, top: 8),
               child: Text(
                 '✣ Asthama'
-                    '\n'
-                    '✣ Diabetes (मधुमेह)'
-                    '\n'
-                    '✣ Obesity (मोटापा)'
-                    '\n'
-                    '✣ Blood pressure'
-                    '\n'
-                    '✣ Appendicitis, stones (pathri rog)',
-                style: TextStyle(fontFamily: 'Baloo', fontSize: 17,
+                '\n'
+                '✣ Diabetes (मधुमेह)'
+                '\n'
+                '✣ Obesity (मोटापा)'
+                '\n'
+                '✣ Blood pressure'
+                '\n'
+                '✣ Appendicitis, stones (pathri rog)',
+                style: TextStyle(
+                    fontFamily: 'Baloo',
+                    fontSize: 17,
                     fontWeight: FontWeight.w500),
               ),
             ),
@@ -232,31 +250,29 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
                 padding: EdgeInsets.only(left: width / 9.9, top: 8),
                 child: Text(
                     '✣ Chronic cold'
-                        '\n'
-                        '✣ Eye disease'
-                        '\n'
-                        '✣ Baldness,Receding Hairline, Hairfall (गंजापन)'
-
-                        '\n'
-                        '✣ Thyroid',
+                    '\n'
+                    '✣ Eye disease'
+                    '\n'
+                    '✣ Baldness,Receding Hairline, Hairfall (गंजापन)'
+                    '\n'
+                    '✣ Thyroid',
                     style: TextStyle(
                         fontFamily: 'Baloo',
                         fontSize: 17,
-                        fontWeight: FontWeight.w500
-                    ))),
+                        fontWeight: FontWeight.w500))),
           ]),
           SizedBox(
-            height: height/8,
+            height: height / 8,
           ),
           Center(
             child: Container(
-              width: width/2,
+              width: width / 2,
               height: 0.5,
               color: Colors.red,
             ),
           ),
           SizedBox(
-            height: height/20,
+            height: height / 20,
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -266,21 +282,22 @@ class _TreatementLaptopState extends State<TreatementLaptop> {
                 style: TextStyle(
                     fontFamily: 'Baloo',
                     fontSize: 18,
-                    color: Colors.red,//Color.fromRGBO(46, 139, 87, 1),
+                    color: Colors.red, //Color.fromRGBO(46, 139, 87, 1),
                     fontWeight: FontWeight.w700),
               ),
               Text(
                 '\n'
                 '✣ Garbh Sanskar (गर्भ संस्कार)- For better development of the child in the womb'
-                    '\n'
-                    '✣ Suvarna Prashana(सुवर्ण प्राशन संस्कार) (for 0- 8 year kids): For increasing the child\'s immunity and intelligence',
+                '\n'
+                '✣ Suvarna Prashana(सुवर्ण प्राशन संस्कार) (for 0- 8 year kids): For increasing the child\'s immunity and intelligence',
                 softWrap: true,
-                style: TextStyle(fontFamily: 'Baloo', fontSize: 17,
+                style: TextStyle(
+                    fontFamily: 'Baloo',
+                    fontSize: 17,
                     fontWeight: FontWeight.w500),
               ),
             ],
           ),
-
           Image(
             image: AssetImage('assets/pngfuel.com.bottom.png'),
             width: width,

@@ -10,7 +10,6 @@ class NavBar extends StatefulWidget {
   final double width;
   final double height;
 
-
   const NavBar({Key key, @required this.width, this.height}) : super(key: key);
 
   @override
@@ -24,8 +23,8 @@ class _NavBarState extends State<NavBar> {
     TreatementLaptop(),
     PanchakarmaLaptop(),
     ContactUsLaptop()
-
   ];
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -53,25 +52,25 @@ class _NavBarState extends State<NavBar> {
                     text: 'Diseases',
                   ),
                   GButton(
-                    icon:  Ionicons.ios_leaf,
+                    icon: Ionicons.ios_leaf,
                     text: 'Panchakarma',
                   ),
                   GButton(
                     icon: Icons.portrait,
-                    text: 'Contact/Reach us',
+                    text: 'Contact/ Reach us',
                   )
                 ],
                 selectedIndex: _selectedindex,
                 color: Colors.white,
                 onTabChange: (index) {
-                  if(index!=_selectedindex){
+                  if (index != _selectedindex) {
                     setState(() {
                       _selectedindex = index;
                     });
-                    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>classes[_selectedindex]));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            classes[_selectedindex]));
                   }
-
-
                 })));
   }
 }
