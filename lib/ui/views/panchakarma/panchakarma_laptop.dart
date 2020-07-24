@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shatayu/widgets/top_bar.dart';
 import 'package:shatayu/widgets/top_deco.dart';
 
+import 'build_row.dart';
+
 class PanchakarmaLaptop extends StatefulWidget {
   @override
   _PanchakarmaLaptopState createState() => _PanchakarmaLaptopState();
@@ -21,18 +23,19 @@ class _PanchakarmaLaptopState extends State<PanchakarmaLaptop> {
           TopDeco(
             height: height,
             width: width,
-            text: 'Panchakarma Treatement',
+            text: 'Panchakarma',
           ),
           Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              buildRow('Vaman-Medicated Vomitting', 'An  excellent treatment for diseases of cold, cough, asthma, '
+              buildRow(false,Title: 'Vaman-Medicated Vomitting', text: 'An  excellent treatment for diseases of cold, cough, asthma, '
               'sinusitis, allergies, skin diseases, diabetes, blood pressure, migraine, psychosis etc.',
-                  width, height, Color(0xffffd5d1)),
-              buildRow('Virechan -Purgative therapy', 'Removal of increased bile(Pitta)  by excretion - '
+                  width: width, height : height, color: Color(0xffffd5d1)),
+              buildRow(false,Title: 'Virechan -Purgative therapy', text: 'Removal of increased bile(Pitta)  by excretion - '
                   'useful on jaundice, acidity, dermatitis, liver diseases, urinary diseases, eye diseases.',
-                  width, height, Color(0xf089CFF0))
+                 width:  width, height: height, color: Color(0xf089CFF0))
             ],
           ),
           SizedBox(
@@ -42,12 +45,13 @@ class _PanchakarmaLaptopState extends State<PanchakarmaLaptop> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              buildRow('Basti-(Medicated Enima)', 'The best medicine for all vata/gout diseasest.It\'s passing medicine through anal passage .Effective on - Joint pain, arthritis,'
+              buildRow(false,Title: 'Basti-(Medicated Enima)', text: 'The best medicine for all vata/gout diseasest.It\'s passing medicine through anal passage .Effective on - Joint pain, arthritis,'
                   ' sciatica, spinal disorders, slip disc, paralysis, osteoporosis, '
                   'menstrual problem, hormone imbalance, infertility, stomach. Diseases, Piles, Migraines and others.',
-                  width, height, Color(0xfffde992)),
-              buildRow('Nasya-Nasal Drop Therapy', 'Nasal medicine - Extremely effective on all Venereal(शिरोरोग) diseases, headache, sinusitis, hair problem, eye diseases, '
-                  'sleep disorders, psychiatric diseases,thyroid and all disorders of nose, ear and spinal cord .', width, height, Color(0xffe7accf))
+                  width: width, height: height, color: Color(0xfffde992)),
+              buildRow(false,Title: 'Nasya-Nasal Drop Therapy', text:'Nasal medicine - Extremely effective on all Venereal(शिरोरोग) diseases, headache, sinusitis, hair problem, eye diseases, '
+                  'sleep disorders, psychiatric diseases,thyroid and all disorders of nose, ear and spinal cord .',
+                  width: width, height: height, color: Color(0xffe7accf))
             ],
           ),
           SizedBox(
@@ -57,12 +61,14 @@ class _PanchakarmaLaptopState extends State<PanchakarmaLaptop> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              buildRow('RaktaMokshan- Blood Letting', 'Removing impure blood from the body - '
+              buildRow(false,Title:'RaktaMokshan- Blood Letting', text:'Removing impure blood from the body - '
                   'beneficial for all blood visceral( रक्त दृष्टिजन्य ) and biliary(पित्तज दोष) defects, as well as diseases of '
                   'psoriasis, eczema, varicose veins, pimples,'
-                  ' headaches, allergies, jaundice, gout, inflammation, etc.', width, height, Color(0xa0cf352e)),
-              buildRow('Shirodhara', 'Gently pouring Medicated liquids,(oil, decotion(काढ़ा)) on the forehead. Most benefitial for mental stress,'
-                  'anxiety, sleeplessness,hairloss, headaches,hormonal imbalances etc ', width, height, Color.fromRGBO(244,164,96, 1))
+                  ' headaches, allergies, jaundice, gout, inflammation, etc.',width: width, height: height,
+                  color: Color(0xa0cf352e)),
+              buildRow(false,Title:'Shirodhara',text: 'Gently pouring Medicated liquids,(oil, decotion(काढ़ा)) on the forehead. Most benefitial for mental stress,'
+                  'anxiety, sleeplessness,hairloss, headaches,hormonal imbalances etc ',width: width,height: height,
+                  color: Color.fromRGBO(244,164,96, 1))
             ],
           ),
           SizedBox(
@@ -72,11 +78,12 @@ class _PanchakarmaLaptopState extends State<PanchakarmaLaptop> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              buildRow(
-                  'Kareliya Massage', 'Authentic therapeutic massage with ayurvedic oils.', width, height, Color(0xfff4C4B2)),
-              buildRow('Medicated Steam Bath', 'Full body therapy using medicated steam to generate sweating or perspiration, which helps to release '
-                  'deep-seated toxins and relieves stress ', width, height,
-                  Color(0xff50c878))
+              buildRow(false,
+                 Title: 'Kareliya Massage', text: 'Authentic therapeutic massage with ayurvedic oils.', width:width, height:height,
+                  color: Color(0xfff4C4B2)),
+              buildRow(false,Title:'Medicated Steam Bath', text:'Full body therapy using medicated steam to generate sweating or perspiration, which helps to release '
+                  'deep-seated toxins and relieves stress ',width: width, height:height,
+                 color: Color(0xff50c878))
             ],
           ),
           SizedBox(
@@ -120,60 +127,5 @@ class _PanchakarmaLaptopState extends State<PanchakarmaLaptop> {
         ]));
   }
 
-  Widget buildRow(String Title, String text, width, height, Color color) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: color,
-      ),
-      width: width / 3,
-      //height: height/2,
 
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Stack(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(10),
-                    topLeft: Radius.circular(10)),
-                child: Image(
-                  image: AssetImage('assets/ayurved1.jpg'),
-                  //width: width / 3,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 130),
-                child: Container(
-                  width: width / 3,
-                  color: Colors.white30,
-                  child: Center(
-                    child: Text(
-                      Title,
-                      style: TextStyle(
-                        fontFamily: 'OpenSans',
-                        fontSize: 30,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Center(
-            child: Padding(
-              padding: EdgeInsets.all(8),
-              child: Text(
-                text,
-                style: TextStyle(fontFamily: 'Baloo', fontSize: 17),
-                softWrap: true,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 }
