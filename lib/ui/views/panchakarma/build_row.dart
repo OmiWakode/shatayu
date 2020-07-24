@@ -26,9 +26,9 @@ Widget buildRow( bool mobile,{String Title, String text, double width, double he
             ),
             Padding(
               padding: mobile?EdgeInsets.only(top: height/5.4):EdgeInsets.only(top: 130),
-              child: Container(
-                width: mobile?width/2.1:width / 3,
-                color: Colors.white30,
+              child: Material(
+                color: mobile?Colors.white70: Colors.white30,
+                //width: mobile?width/2.1:width / 3,
                 child: Center(
                   child: Text(
                     Title,

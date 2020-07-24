@@ -19,7 +19,7 @@ Widget Diseases({bool mobile, double height, double width}){
       Padding(
         padding: mobile?EdgeInsets.only(top: 8):EdgeInsets.only(left: width / 9, top: 8),
         child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: mobile?MainAxisAlignment.spaceEvenly: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
@@ -76,7 +76,7 @@ Widget Diseases({bool mobile, double height, double width}){
       Padding(
         padding: mobile?EdgeInsets.only(top: 8):  EdgeInsets.only(left: width / 9, top: 8),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: mobile?MainAxisAlignment.spaceEvenly: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
@@ -121,8 +121,9 @@ Widget Diseases({bool mobile, double height, double width}){
       Padding(
         padding: mobile?EdgeInsets.only(top: 8):  EdgeInsets.only(left: width / 9, top: 8),
         child: Row(
+          mainAxisAlignment: mobile?MainAxisAlignment.spaceEvenly: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
           children: [
             Text(
               '✣ Jaundice (पीलिया)'
@@ -170,7 +171,7 @@ Widget Diseases({bool mobile, double height, double width}){
       Padding(
         padding:  mobile?EdgeInsets.only(top: 8):EdgeInsets.only(left: width / 9, top: 8),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: mobile?MainAxisAlignment.spaceEvenly: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
@@ -217,7 +218,7 @@ Widget Diseases({bool mobile, double height, double width}){
       Padding(
         padding: mobile?EdgeInsets.only( top: 8):EdgeInsets.only(left: width / 9, top: 8),
         child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: mobile?MainAxisAlignment.spaceEvenly: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(

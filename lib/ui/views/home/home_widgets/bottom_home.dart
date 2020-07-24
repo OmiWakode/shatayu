@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shatayu/services/call_and_messages_service.dart';
 import 'package:shatayu/services/service_locator.dart';
+import 'package:shatayu/widgets/info.dart';
 
 Widget BottomHome(bool mobile,{double height, double width}){
   final CallsAndMessagesService _service = locator<CallsAndMessagesService>();
-  final String number = "+919826092380";
-  final String email = "madhaviayurved@gmail.com";
+
   return Stack(
     children: [
       Column(

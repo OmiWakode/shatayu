@@ -15,7 +15,7 @@ Widget TreatementMobile({width, height}){
             Image(
               image: AssetImage('assets/pngfuel.com.bottom.png'),
               width: width,
-              height: height / 2.6,
+              height: height / 4,
               fit: BoxFit.fill,
             ),
 

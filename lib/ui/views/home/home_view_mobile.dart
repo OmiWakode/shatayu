@@ -5,6 +5,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:shatayu/ui/views/contact_us/contact_us_mobile.dart';
 import 'package:shatayu/ui/views/home/home_widgets/cir.dart';
 import 'package:shatayu/ui/views/panchakarma/panchakarma_mobile.dart';
 import 'package:shatayu/ui/views/treatement/treatement_mobile.dart';
@@ -139,7 +140,10 @@ class _HomeMobilePotraitState extends State<HomeMobilePotrait> {
         TreatementMobile(width: width, height: height),
 
         //Panchakarma Page
-        PanchakarmaMobile(width: width, height: height)
+        PanchakarmaMobile(width: width, height: height),
+
+        //Contact Us/Reach Us Page
+        ContactUsMobile(width: width, height: height)
 
 
 

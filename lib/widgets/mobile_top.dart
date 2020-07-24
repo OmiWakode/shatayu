@@ -6,7 +6,7 @@ Widget MobileTop({String text, double width, double height, String Description})
       Image(
         image: AssetImage('assets/pngfuel1.com.png'),
         width: width,
-        height: height / 2.6,
+        height: height / 3.5,
         fit: BoxFit.fill,
       ),
       Padding(
