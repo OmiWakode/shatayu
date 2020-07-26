@@ -1,4 +1,6 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 Widget MobileTop({String text, double width, double height, String Description}){
   return  Stack(
@@ -29,7 +31,7 @@ Widget MobileTop({String text, double width, double height, String Description})
         ),
       ),
       Padding(
-        padding: EdgeInsets.only(left: width / 10, top: height/3.9, right: width/20),
+        padding: EdgeInsets.only(left: width / 10, top: height/4, right: width/20),
         child: Text(
           Description,
           style: TextStyle(

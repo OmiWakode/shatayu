@@ -29,6 +29,8 @@ dependencies:
   url_launcher:
   get_it:
   flutter_icons:
+  scrollable_positioned_list:
+  sticky_headers:
 
 
   # The following adds the Cupertino Icons font to your application.
