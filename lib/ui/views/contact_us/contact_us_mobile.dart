@@ -15,7 +15,7 @@ Widget ContactUsMobile({double height, double width}){
             'Reach Us',Description: 'Locate Us', width: width, height: height),
         SizedBox(height: height/25,),
         Material(
-          elevation: 10,
+          elevation: 2,
           child: SizedBox(
             height: height/3,
             width: width/1.5,
@@ -44,7 +44,7 @@ Widget ContactUsMobile({double height, double width}){
             },
             child: Material(
                 color: Color.fromRGBO(1, 60, 30, 1),
-                elevation: 16.0,
+                elevation: 2.0,
                 borderRadius: BorderRadius.circular(10.0),
                 child: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -82,7 +82,7 @@ Widget ContactUsMobile({double height, double width}){
             },
             child: Material(
               color: Color.fromRGBO(1, 60, 30, 1),
-              elevation: 16.0,
+              elevation: 2.0,
               borderRadius: BorderRadius.circular(10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
@@ -129,7 +129,7 @@ Widget ContactUsMobile({double height, double width}){
             },
             child: Material(
                 color: Color.fromRGBO(1, 60, 30, 1),
-                elevation: 16.0,
+                elevation: 2.0,
                 borderRadius: BorderRadius.circular(10.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
