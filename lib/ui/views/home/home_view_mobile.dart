@@ -5,6 +5,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:scroll_to_index/scroll_to_index.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:shatayu/ui/views/contact_us/contact_us_mobile.dart';
 import 'package:shatayu/ui/views/home/home_widgets/cir.dart';
@@ -21,14 +22,41 @@ class HomeMobilePotrait extends StatefulWidget {
 }
 
 class _HomeMobilePotraitState extends State<HomeMobilePotrait> {
+  final _scrollController = ScrollController();
+  AutoScrollController controller;
+
   final ItemScrollController itemScrollController = ItemScrollController();
-  final ItemPositionsListener itemPositionsListener =
-      ItemPositionsListener.create();
+
+
+  bool _stick = false;
+
+  _scrollListener() async {
+    double percent =
+        _scrollController.offset / MediaQuery.of(context).size.height * 100;
+    print(_scrollController.offset);
+    print(
+        'percent: ${_scrollController.offset / MediaQuery.of(context).size.height * 100}');
+    if (percent >= 27.0) {
+      setState(() {
+        print('hi');
+        _stick = true;
+      });
+    }
+    if (percent < 27.0) {
+      setState(() {
+        _stick = false;
+      });
+    }
+  }
 
   @override
   void initState() {
     super.initState();
-    itemPositionsListener.itemPositions;
+    final ItemPositionsListener itemPositionsListener = ItemPositionsListener.create();
+    _scrollController.addListener(_scrollListener);
+    print(itemPositionsListener.itemPositions);
+
+
   }
 
   @override
@@ -37,278 +65,148 @@ class _HomeMobilePotraitState extends State<HomeMobilePotrait> {
     double height = media.size.height;
     double width = media.size.width;
 
-    List<Widget> _homeList = [
-      Stack(
-        children: [
-          Image(
-            image: AssetImage('assets/light-green-background-wallpaper-3.jpg'),
-            fit: BoxFit.fill,
-            height: height / 3.3,
-            width: width,
-          ),
-          Image(
-            image: AssetImage('assets/green_2.png'),
-            fit: BoxFit.fill,
-            width: width,
-            height: height / 4,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 10, top: height / 12),
-            child: Image(
-              image: AssetImage('assets/shatayu.png'),
-              height: 45,
-              width: 45,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: height / 16, left: width / 5.8),
-            child: Text(
-              'Dr. Madhavi\'s',
-              style: TextStyle(
-                  fontFamily: 'GreatVibes',
-                  fontWeight: FontWeight.w800,
-                  color: Colors.red,
-                  fontSize: 22),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: width / 5.8, top: height / 12),
-            child: Text(
-              'Shatayu Ayurveda Panchakarma'
-              '\n'
-              'Super Speciality Clinic',
-              style: TextStyle(
-                fontFamily: 'Oswald',
-                fontWeight: FontWeight.w600,
-                fontSize: 28,
-                color: //Colors.white
-                    Color.fromRGBO(1, 60, 30, 1),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: width / 5.7, top: height / 3.9),
-            child: Text(
-              'Serving since 15 years..',
-              style: TextStyle(
-                  fontFamily: 'GreatVibes',
-                  color: Color.fromRGBO(46, 139, 87, 1),
-                  fontSize: 22,
-                  fontWeight: FontWeight.w500),
-            ),
-          ),
-        ],
-      ),
-      Container(
-        color: Color.fromRGBO(187, 255, 168, 1),
-        height: 8,
-      ),
-
-    CurvedNavigationBar(
-          height: height / 15,
-          backgroundColor: Color.fromRGBO(187, 255, 168, 1),
-          //buttonBackgroundColor: Color.fromRGBO(0,117,78,1),
-          onTap: (int index) {
-            itemScrollController.scrollTo(
-                index: 7,
-                duration: Duration(milliseconds: 1500),
-                curve: Curves.easeInOutCubic);
-          },
-          items: [
-            Icon(
-              Icons.home,
-              color: Color.fromRGBO(1, 60, 30, 1),
-            ),
-            Icon(
-              Icons.local_hospital,
-              color: Color.fromRGBO(1, 60, 30, 1),
-            ),
-            Icon(
-              Ionicons.ios_leaf,
-              color: Color.fromRGBO(1, 60, 30, 1),
-            ),
-            Icon(
-              Icons.portrait,
-              color: Color.fromRGBO(1, 60, 30, 1),
-            )
-          ],
-        ),
-
-      CarouselSlider(
-          items: buildCarasoulList(50),
-          options: CarouselOptions(
-            height: height / 4,
-            aspectRatio: 16 / 9,
-            viewportFraction: .35,
-            initialPage: 0,
-            enableInfiniteScroll: true,
-            pauseAutoPlayOnTouch: true,
-            reverse: false,
-            autoPlay: true,
-            autoPlayInterval: Duration(seconds: 10),
-            autoPlayAnimationDuration: Duration(milliseconds: 800),
-            autoPlayCurve: Curves.fastOutSlowIn,
-            enlargeCenterPage: false,
-            scrollDirection: Axis.horizontal,
-          )),
-      HomeAbout(true, height: height, width: width),
-      SizedBox(
-        height: height / 20,
-      ),
-      BottomHome(true, height: height, width: width),
-
-      //Diseases Page
-      TreatementMobile(width: width, height: height),
-
-      //Panchakarma Page
-      PanchakarmaMobile(width: width, height: height),
-
-      //Contact Us/Reach Us Page
-      ContactUsMobile(width: width, height: height)
-    ];
-
     return SafeArea(
       child: Scaffold(
           body: Scrollbar(
-              child: ListView(
+              child: Stack(
+        children: [
+          ListView(
+            controller: _scrollController,
+            children: [
+              Stack(
                 children: [
-                  Stack(
-                    children: [
-                      Image(
-                        image: AssetImage('assets/light-green-background-wallpaper-3.jpg'),
-                        fit: BoxFit.fill,
-                        height: height / 3.3,
-                        width: width,
-                      ),
-                      Image(
-                        image: AssetImage('assets/green_2.png'),
-                        fit: BoxFit.fill,
-                        width: width,
-                        height: height / 4,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 10, top: height / 12),
-                        child: Image(
-                          image: AssetImage('assets/shatayu.png'),
-                          height: 45,
-                          width: 45,
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: height / 16, left: width / 5.8),
-                        child: Text(
-                          'Dr. Madhavi\'s',
-                          style: TextStyle(
-                              fontFamily: 'GreatVibes',
-                              fontWeight: FontWeight.w800,
-                              color: Colors.red,
-                              fontSize: 22),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: width / 5.8, top: height / 12),
-                        child: Text(
-                          'Shatayu Ayurveda Panchakarma'
-                              '\n'
-                              'Super Speciality Clinic',
-                          style: TextStyle(
-                            fontFamily: 'Oswald',
-                            fontWeight: FontWeight.w600,
-                            fontSize: 28,
-                            color: //Colors.white
+                  Image(
+                    image: AssetImage(
+                        'assets/light-green-background-wallpaper-3.jpg'),
+                    fit: BoxFit.fill,
+                    height: height / 3.3,
+                    width: width,
+                  ),
+                  Image(
+                    image: AssetImage('assets/green_2.png'),
+                    fit: BoxFit.fill,
+                    width: width,
+                    height: height / 4,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 10, top: height / 12),
+                    child: Image(
+                      image: AssetImage('assets/shatayu.png'),
+                      height: 45,
+                      width: 45,
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsets.only(top: height / 16, left: width / 5.8),
+                    child: Text(
+                      'Dr. Madhavi\'s',
+                      style: TextStyle(
+                          fontFamily: 'GreatVibes',
+                          fontWeight: FontWeight.w800,
+                          color: Colors.red,
+                          fontSize: 22),
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsets.only(left: width / 5.8, top: height / 12),
+                    child: Text(
+                      'Shatayu Ayurveda Panchakarma'
+                      '\n'
+                      'Super Speciality Clinic',
+                      style: TextStyle(
+                        fontFamily: 'Oswald',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 28,
+                        color: //Colors.white
                             Color.fromRGBO(1, 60, 30, 1),
-                          ),
-                        ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.only(left: width / 5.7, top: height / 3.9),
-                        child: Text(
-                          'Serving since 15 years..',
-                          style: TextStyle(
-                              fontFamily: 'GreatVibes',
-                              color: Color.fromRGBO(46, 139, 87, 1),
-                              fontSize: 22,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
-                  /*
-                  Container(
-                    color: Color.fromRGBO(187, 255, 168, 1),
-                    height: 8,
+                  Padding(
+                    padding:
+                        EdgeInsets.only(left: width / 5.7, top: height / 3.9),
+                    child: Text(
+                      'Serving since 15 years..',
+                      style: TextStyle(
+                          fontFamily: 'GreatVibes',
+                          color: Color.fromRGBO(46, 139, 87, 1),
+                          fontSize: 22,
+                          fontWeight: FontWeight.w500),
+                    ),
                   ),
-*/
-                  StickyHeader(
-                    header: CurvedNavigationBar(
-                      height: height / 15,
-                      backgroundColor: Color.fromRGBO(187, 255, 168, 1),
-                      //buttonBackgroundColor: Color.fromRGBO(0,117,78,1),
-
-                      items: [
-                        Icon(
-                          Icons.home,
-                          color: Color.fromRGBO(1, 60, 30, 1),
-                          size: 30,
-                        ),
-                        Icon(
-                          Icons.local_hospital,
-                          color: Color.fromRGBO(1, 60, 30, 1),
-                          size: 30,
-                        ),
-                        Icon(
-                          Ionicons.ios_leaf,
-                          color: Color.fromRGBO(1, 60, 30, 1),
-                          size: 30,
-                        ),
-                        Icon(
-                          Icons.portrait,
-                          color: Color.fromRGBO(1, 60, 30, 1),
-                          size: 30,
-                        )
-                      ],
-                    ), content: Column(
-                    children: [
-                      CarouselSlider(
-                          items: buildCarasoulList(50),
-                          options: CarouselOptions(
-                            height: height / 4,
-                            aspectRatio: 16 / 9,
-                            viewportFraction: .35,
-                            initialPage: 0,
-                            enableInfiniteScroll: true,
-                            pauseAutoPlayOnTouch: true,
-                            reverse: false,
-                            autoPlay: true,
-                            autoPlayInterval: Duration(seconds: 10),
-                            autoPlayAnimationDuration: Duration(milliseconds: 800),
-                            autoPlayCurve: Curves.fastOutSlowIn,
-                            enlargeCenterPage: false,
-                            scrollDirection: Axis.horizontal,
-                          )),
-                      HomeAbout(true, height: height, width: width),
-                      SizedBox(
-                        height: height / 20,
-                      ),
-                      BottomHome(true, height: height, width: width),
-
-                      //Diseases Page
-                      TreatementMobile(width: width, height: height),
-
-                      //Panchakarma Page
-                      PanchakarmaMobile(width: width, height: height),
-
-                      //Contact Us/Reach Us Page
-                      ContactUsMobile(width: width, height: height)
-
-                    ],
-                  )
-                  ),
-                  
-
                 ],
-              )
-      )),
+              ),
+              getNavBar(height),
+
+              CarouselSlider(
+                  items: buildCarasoulList(50),
+                  options: CarouselOptions(
+                    height: height / 4,
+                    aspectRatio: 16 / 9,
+                    viewportFraction: .35,
+                    initialPage: 0,
+                    enableInfiniteScroll: true,
+                    pauseAutoPlayOnTouch: true,
+                    reverse: false,
+                    autoPlay: true,
+                    autoPlayInterval: Duration(seconds: 10),
+                    autoPlayAnimationDuration: Duration(milliseconds: 800),
+                    autoPlayCurve: Curves.fastOutSlowIn,
+                    enlargeCenterPage: false,
+                    scrollDirection: Axis.horizontal,
+                  )),
+              HomeAbout(true, height: height, width: width),
+              SizedBox(
+                height: height / 20,
+              ),
+              BottomHome(true, height: height, width: width),
+
+              //Diseases Page
+
+              TreatementMobile(width: width, height: height),
+              //Panchakarma Page
+
+              PanchakarmaMobile(width: width, height: height),
+              //Contact Us/Reach Us Page
+
+              ContactUsMobile(width: width, height: height)
+            ],
+          ),
+          _stick ? getNavBar(height) : Container(),
+        ],
+      ))),
+    );
+  }
+
+  Widget getNavBar(double height) {
+    return CurvedNavigationBar(
+      height: height / 15,
+      backgroundColor: Color.fromRGBO(187, 255, 168, 1),
+      //buttonBackgroundColor: Color.fromRGBO(0,117,78,1),
+      onTap: (int index) {
+        controller.scrollToIndex(5, preferPosition: AutoScrollPosition.begin);
+      },
+
+      items: [
+        Icon(
+          Icons.home,
+          color: Color.fromRGBO(1, 60, 30, 1),
+        ),
+        Icon(
+          Icons.local_hospital,
+          color: Color.fromRGBO(1, 60, 30, 1),
+        ),
+        Icon(
+          Ionicons.ios_leaf,
+          color: Color.fromRGBO(1, 60, 30, 1),
+        ),
+        Icon(
+          Icons.portrait,
+          color: Color.fromRGBO(1, 60, 30, 1),
+        )
+      ],
     );
   }
 }

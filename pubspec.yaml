@@ -31,6 +31,7 @@ dependencies:
   flutter_icons:
   scrollable_positioned_list:
   sticky_headers:
+  scroll_to_index:
 
 
   # The following adds the Cupertino Icons font to your application.
