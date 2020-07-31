@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget buildRow( bool mobile,{String Title, String text, double width, double height, Color color}) {
+Widget buildRow( bool mobile,{String Title, String text, double width, double height, Color color, String img}) {
   return Container(
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(10),
@@ -21,7 +21,7 @@ Widget buildRow( bool mobile,{String Title, String text, double width, double he
                 borderRadius: BorderRadius.only(
                     topRight: Radius.circular(10),
                     topLeft: Radius.circular(10)),
-                child: Image.asset('assets/ayurved1.jpg', fit:  BoxFit.fill,)
+                child: Image.asset(img, fit:  BoxFit.fill,)
               ),
             ),
             Padding(

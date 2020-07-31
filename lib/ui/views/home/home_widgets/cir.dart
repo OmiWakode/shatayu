@@ -8,7 +8,7 @@ List<Widget> buildCarasoulList(double rad){
       backgroundColor: Colors.black12,
       child: CircleAvatar(
         radius: rad,
-        backgroundImage: AssetImage('assets/lol.jpeg'),
+        backgroundImage: AssetImage('assets/potli.jpg'),
       ),
     ),
     CircleAvatar(
@@ -24,7 +24,7 @@ List<Widget> buildCarasoulList(double rad){
       backgroundColor: Colors.black12,
       child: CircleAvatar(
         radius: rad,
-        backgroundImage: AssetImage('assets/potli.jpg'),
+        backgroundImage: AssetImage('assets/nasyam.jpg'),
       ),
     ),
     CircleAvatar(
@@ -35,6 +35,15 @@ List<Widget> buildCarasoulList(double rad){
         backgroundImage: AssetImage('assets/shirodhara1.jpg'),
       ),
     ),
+     CircleAvatar(
+       radius: rad + 5,
+       backgroundColor: Colors.black12,
+       child: CircleAvatar(
+         radius: rad,
+         backgroundImage: AssetImage('assets/ayurved.jpg'),
+       ),
+     ),
+
   ];
    return Bir;
 
