@@ -57,9 +57,9 @@ class _HomeViewLaptopState extends State<HomeViewLaptop> {
                   height: height / 2,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 25, top: 30),
+                  padding: EdgeInsets.only(left: 25, top: height/7),
                   child: Image(
-                    image: AssetImage('assets/logo_1.png'),
+                    image: AssetImage('assets/shatayu.png'),
                     height: 100,
                     width: 100,
                   ),
@@ -93,7 +93,7 @@ class _HomeViewLaptopState extends State<HomeViewLaptop> {
                 Padding(
                   padding: EdgeInsets.only(left: width / 10, top: height / 2.5),
                   child: Text(
-                    'Authenittically serving since 15 years..',
+                    'Serving since 15 years..',
                     style: TextStyle(
                         fontFamily: 'GreatVibes',
                         color: Color.fromRGBO(46, 139, 87, 1),

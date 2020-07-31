@@ -1,5 +1,5 @@
 /* Contains the widget that will be used for Mobile widget of home,
-potrait and landscape
+portrait and landscape
  */
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
@@ -11,37 +11,77 @@ import 'package:shatayu/ui/views/contact_us/contact_us_mobile.dart';
 import 'package:shatayu/ui/views/home/home_widgets/cir.dart';
 import 'package:shatayu/ui/views/panchakarma/panchakarma_mobile.dart';
 import 'package:shatayu/ui/views/treatement/treatement_mobile.dart';
+import 'package:shatayu/widgets/mobile_header.dart';
+import 'package:shatayu/widgets/sticky_nav_bar.dart';
 import 'package:sticky_headers/sticky_headers/widget.dart';
 
 import 'home_widgets/bottom_home.dart';
 import 'home_widgets/home_about.dart';
 
-class HomeMobilePotrait extends StatefulWidget {
+class HomeMobilePortrait extends StatefulWidget {
   @override
-  _HomeMobilePotraitState createState() => _HomeMobilePotraitState();
+  _HomeMobilePortraitState createState() => _HomeMobilePortraitState();
 }
 
-class _HomeMobilePotraitState extends State<HomeMobilePotrait> {
-  GlobalKey _bottomNavigationKey = GlobalKey();
+class _HomeMobilePortraitState extends State<HomeMobilePortrait> {
+
   CurvedNavigationBarState navBarState;
 
-
   final ItemScrollController itemScrollController = ItemScrollController();
-  final ItemPositionsListener itemPositionsListener = ItemPositionsListener.create();
+  final ItemPositionsListener itemPositionsListener =
+      ItemPositionsListener.create();
 
   bool _stick = false;
 
-  CurvedNavigationBar _navBar;
+  StickyNavBar _navBar;
+  int _navIndex = 0;
 
+  Widget _home(double height, double width) {
+    return Column(
+      children: [
+        CarouselSlider(
+            items: buildCarasoulList(50),
+            options: CarouselOptions(
+              height: height / 4,
+              aspectRatio: 16 / 9,
+              viewportFraction: .35,
+              initialPage: 0,
+              enableInfiniteScroll: true,
+              pauseAutoPlayOnTouch: true,
+              reverse: false,
+              autoPlay: true,
+              autoPlayInterval: Duration(seconds: 10),
+              autoPlayAnimationDuration: Duration(milliseconds: 800),
+              autoPlayCurve: Curves.fastOutSlowIn,
+              enlargeCenterPage: false,
+              scrollDirection: Axis.horizontal,
+            )),
+        HomeAbout(true, height: height, width: width),
+        SizedBox(
+          height: height / 20,
+        ),
+        BottomHome(true, height: height, width: width),
+      ],
+    );
+  }
 
+  void _navOnTap(int index) {
+    setState(() {
+      _navIndex = index;
+    });
+    itemScrollController.scrollTo(
+        index: index == 0 ? 0 : index + 2,
+        duration: Duration(seconds: 2),
+        curve: Curves.easeInOutCubic);
+  }
 
   @override
   void initState() {
-    _navBar = getNavBar(750);
+    _navBar = StickyNavBar(onTap: (int index) => _navOnTap(index));
     itemPositionsListener.itemPositions.addListener(() {
-      if (itemPositionsListener.itemPositions.value.length>0) {
-        var element = itemPositionsListener.itemPositions.value.where((element) => element.index==1);
-        print(element);
+      if (itemPositionsListener.itemPositions.value.length > 0) {
+        var element = itemPositionsListener.itemPositions.value
+            .where((element) => element.index == 1);
         if (element.isNotEmpty) {
           if (element.elementAt(0).itemLeadingEdge < 0 && !_stick) {
             setState(() => _stick = true);
@@ -56,166 +96,45 @@ class _HomeMobilePotraitState extends State<HomeMobilePotrait> {
 
   @override
   Widget build(BuildContext context) {
-    if (itemPositionsListener.itemPositions.value.length>0)
-      print(itemPositionsListener.itemPositions.value?.elementAt(1));
-
     var media = MediaQuery.of(context);
     double height = media.size.height;
     double width = media.size.width;
 
-    List<Widget> _yeloo = [
-      Stack(
-      children: [
-        Image(
-          image: AssetImage(
-              'assets/light-green-background-wallpaper-3.jpg'),
-          fit: BoxFit.fill,
-          height: height / 3.3,
-          width: width,
-        ),
-        Image(
-          image: AssetImage('assets/green_2.png'),
-          fit: BoxFit.fill,
-          width: width,
-          height: height / 4,
-        ),
-        Padding(
-          padding: EdgeInsets.only(left: 10, top: height / 12),
-          child: Image(
-            image: AssetImage('assets/shatayu.png'),
-            height: 45,
-            width: 45,
-          ),
-        ),
-        Padding(
-          padding:
-          EdgeInsets.only(top: height / 16, left: width / 5.8),
-          child: Text(
-            'Dr. Madhavi\'s',
-            style: TextStyle(
-                fontFamily: 'GreatVibes',
-                fontWeight: FontWeight.w800,
-                color: Colors.red,
-                fontSize: 22),
-          ),
-        ),
-        Padding(
-          padding:
-          EdgeInsets.only(left: width / 5.8, top: height / 12),
-          child: Text(
-            'Shatayu Ayurveda Panchakarma'
-                '\n'
-                'Super Speciality Clinic',
-            style: TextStyle(
-              fontFamily: 'Oswald',
-              fontWeight: FontWeight.w600,
-              fontSize: 28,
-              color: //Colors.white
-              Color.fromRGBO(1, 60, 30, 1),
-            ),
-          ),
-        ),
-        Padding(
-          padding:
-          EdgeInsets.only(left: width / 5.7, top: height / 3.9),
-          child: Text(
-            'Serving since 15 years..',
-            style: TextStyle(
-                fontFamily: 'GreatVibes',
-                color: Color.fromRGBO(46, 139, 87, 1),
-                fontSize: 22,
-                fontWeight: FontWeight.w500),
-          ),
-        ),
-      ],
-    ),
+    List<Widget> _widgets = [
+      MobileHeader(),
       _navBar,
-
-      CarouselSlider(
-          items: buildCarasoulList(50),
-          options: CarouselOptions(
-            height: height / 4,
-            aspectRatio: 16 / 9,
-            viewportFraction: .35,
-            initialPage: 0,
-            enableInfiniteScroll: true,
-            pauseAutoPlayOnTouch: true,
-            reverse: false,
-            autoPlay: true,
-            autoPlayInterval: Duration(seconds: 10),
-            autoPlayAnimationDuration: Duration(milliseconds: 800),
-            autoPlayCurve: Curves.fastOutSlowIn,
-            enlargeCenterPage: false,
-            scrollDirection: Axis.horizontal,
-          )),
-      HomeAbout(true, height: height, width: width),
-      SizedBox(
-        height: height / 20,
-      ),
-      BottomHome(true, height: height, width: width),
-
+      _home(height, width),
       //Diseases Page
-
       TreatementMobile(width: width, height: height),
       //Panchakarma Page
-
       PanchakarmaMobile(width: width, height: height),
       //Contact Us/Reach Us Page
-
-      ContactUsMobile(width: width, height: height)];
+      ContactUsMobile(width: width, height: height)
+    ];
 
     return SafeArea(
       child: Scaffold(
-          body: Scrollbar(
-              child: Stack(
-        children: [ScrollablePositionedList.builder(
-          itemCount: _yeloo.length,
-          itemBuilder: (context, index) {
-            return _yeloo[index];
-          },
-          itemScrollController: itemScrollController,
-          itemPositionsListener: itemPositionsListener,
+        body: Scrollbar(
+          child: Stack(
+            children: [
+              ScrollablePositionedList.builder(
+                itemCount: _widgets.length,
+                itemBuilder: (context, index) {
+                  return _widgets[index];
+                },
+                itemScrollController: itemScrollController,
+                itemPositionsListener: itemPositionsListener,
+              ),
+              _stick
+                  ? StickyNavBar(
+                      onTap: (int index) => _navOnTap(index),
+                      index: _navIndex,
+                    )
+                  : Container(),
+            ],
+          ),
         ),
-
-          _stick ? _navBar : Container(),
-        ],
-      ))),
-    );
-  }
-
-  Widget getNavBar(double height) {
-    return CurvedNavigationBar(
-      height: height,
-      backgroundColor: Color.fromRGBO(187, 255, 168, 1),
-      //color: Colors.white70,
-      //buttonBackgroundColor: Color.fromRGBO(0,117,78,1),
-      onTap: (int index) {
-
-        itemScrollController.scrollTo(
-            index: 6,
-            duration: Duration(seconds: 2),
-
-            curve: Curves.easeInOutCubic);
-      },
-
-      items: [
-        Icon(
-          Icons.home,
-          color: Color.fromRGBO(1, 60, 30, 1),
-        ),
-        Icon(
-          Icons.local_hospital,
-          color: Color.fromRGBO(1, 60, 30, 1),
-        ),
-        Icon(
-          Ionicons.ios_leaf,
-          color: Color.fromRGBO(1, 60, 30, 1),
-        ),
-        Icon(
-          Icons.portrait,
-          color: Color.fromRGBO(1, 60, 30, 1),
-        )
-      ],
+      ),
     );
   }
 }

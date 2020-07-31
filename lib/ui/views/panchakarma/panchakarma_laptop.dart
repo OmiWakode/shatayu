@@ -28,7 +28,7 @@ class _PanchakarmaLaptopState extends State<PanchakarmaLaptop> {
             text: 'Panchakarma',
           ),
           Padding(
-            padding: EdgeInsets.only(left: width / 10),
+            padding: EdgeInsets.only(left: width / 10,bottom: 10),
             child: Text(
               'Panchakarma therapies at '
                   'Shatayu Ayurveda Panchakarma Super Speciality Clinic'

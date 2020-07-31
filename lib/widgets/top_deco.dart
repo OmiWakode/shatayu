@@ -29,6 +29,15 @@ class _TopDecoState extends State<TopDeco> {
           width: widget.width,
           height: widget.height,
         ),
+        Padding(
+          padding: EdgeInsets.only(top: widget.height/10, left: widget.width/4),
+          child: Image(
+            image: AssetImage('assets/shatayu.png'),
+            width: 100,
+            height: 100,
+          ),
+        ),
+
         Center(
           child: Padding(
             padding: EdgeInsets.only(top: widget.height / 9),

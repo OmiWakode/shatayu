@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shatayu/responsive/oreintation_layout.dart';
+import 'package:shatayu/responsive/orientation_layout.dart';
 import 'package:shatayu/responsive/responsive_builder.dart';
 import 'package:shatayu/responsive/screen_type_layout.dart';
 
@@ -11,7 +11,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
       mobile: OrientationLayout(
-        portrait: HomeMobilePotrait(),
+        portrait: HomeMobilePortrait(),
         //landscape: HomeMobileLandscape(),
       ),
       desktop: HomeViewLaptop(),
