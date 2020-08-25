@@ -42,7 +42,9 @@ class MobileHeader extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(left: width / 5.8, top: height / 12),
           child: Text(
-            'Shatayu Ayurveda Panchakarma'
+            'Shatayu Ayurved'
+            '\n'
+                'Panchakarma'
                 '\n'
                 'Super Speciality Clinic',
             style: TextStyle(

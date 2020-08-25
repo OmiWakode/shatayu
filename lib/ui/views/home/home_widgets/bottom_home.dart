@@ -105,7 +105,7 @@ Widget BottomHome(bool mobile,{double height, double width}){
           backgroundColor: Colors.white,
           child: CircleAvatar(
             radius: 80,
-            backgroundImage: AssetImage('assets/lol.jpeg'),
+            backgroundImage: AssetImage('assets/aai.jpg'),
           ),
         ),
         //backgroundImage: ,

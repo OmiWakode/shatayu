@@ -12,7 +12,7 @@ Widget BuildTiles(bool mobile, {double height, double width }){
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           buildRow(mobile,Title: Vaman, text: VamanDesc,
-              width: width, height : height, color: Color(0xffffd5d1), img: 'assets/vaman.png'),
+              width: width, height : height, color: Color(0xffffd5d1), img: 'assets/vamana_og.gif'),
           buildRow(mobile,Title: Virechan, text: VirechanDesc,
               width:  width, height: height, color: Color(0xf089CFF0), img: 'assets/virechan.jpg')
         ],
@@ -40,7 +40,7 @@ Widget BuildTiles(bool mobile, {double height, double width }){
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           buildRow(mobile,Title: RaktaMokshan, text: RaktaMokshanDesc, width: width, height: height,
-              color: Color(0xa0cf352e) ,img: 'assets/ayurved1.jpg'),
+              color: Color(0xa0cf352e) ,img: 'assets/DSC03103.JPG'),
           buildRow(mobile,Title: Shirodhara,text: ShirodharaDesc,width: width,height: height,
               color: Color.fromRGBO(244,164,96, 1), img: 'assets/shirodhara1.jpg')
         ],
@@ -55,9 +55,9 @@ Widget BuildTiles(bool mobile, {double height, double width }){
         children: [
           buildRow(mobile,
               Title: Massage, text: MassageDesc, width:width, height:height,
-              color: Color(0xfff4C4B2), img: 'assets/ayurved1.jpg'),
+              color: Color(0xfff4C4B2), img: 'assets/Massage_therapy.jpg'),
           buildRow(mobile,Title: SteamBath, text: SteamBathDesc,width: width, height:height,
-              color: Color(0xff50c878),img: 'assets/ayurved1.jpg')
+              color: Color(0xff50c878),img: 'assets/steambathjpg.jpg')
         ],
       ),
 

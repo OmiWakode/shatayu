@@ -42,7 +42,8 @@ class _TopDecoState extends State<TopDeco> {
           child: Padding(
             padding: EdgeInsets.only(top: widget.height / 9),
             child: Text(
-              'Shatayu Ayurved Pacnhakarma'
+              'Shatayu Ayurved '
+                  'Panchakarma'
               '\n'
               'Superspeciality Clinic',
               style: TextStyle(

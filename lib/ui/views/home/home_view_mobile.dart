@@ -4,8 +4,7 @@ portrait and landscape
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
-import 'package:scroll_to_index/scroll_to_index.dart';
+
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:shatayu/ui/views/contact_us/contact_us_mobile.dart';
 import 'package:shatayu/ui/views/home/home_widgets/cir.dart';
@@ -13,8 +12,6 @@ import 'package:shatayu/ui/views/panchakarma/panchakarma_mobile.dart';
 import 'package:shatayu/ui/views/treatement/treatement_mobile.dart';
 import 'package:shatayu/widgets/mobile_header.dart';
 import 'package:shatayu/widgets/sticky_nav_bar.dart';
-import 'package:sticky_headers/sticky_headers/widget.dart';
-
 import 'home_widgets/bottom_home.dart';
 import 'home_widgets/home_about.dart';
 

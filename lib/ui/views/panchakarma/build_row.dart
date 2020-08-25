@@ -21,7 +21,13 @@ Widget buildRow( bool mobile,{String Title, String text, double width, double he
                 borderRadius: BorderRadius.only(
                     topRight: Radius.circular(10),
                     topLeft: Radius.circular(10)),
-                child: Image.asset(img, fit:  BoxFit.fill,)
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Image.asset(img, fit:  BoxFit.fill, width: mobile?width/2.1:width / 3,),
+                  ],
+                )
               ),
             ),
             Padding(

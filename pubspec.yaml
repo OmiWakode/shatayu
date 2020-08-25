@@ -30,7 +30,6 @@ dependencies:
   get_it:
   flutter_icons:
   scrollable_positioned_list:
-  sticky_headers:
   scroll_to_index:
 
 
