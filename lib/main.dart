@@ -13,9 +13,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       /*theme: ThemeData(
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        visualDensity: VisualDensity.adaptivePlatformDenfluttsity,
       ),*/
       home: HomeView(),
     );
   }
 }
+
+

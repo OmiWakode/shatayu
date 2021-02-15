@@ -2,9 +2,7 @@
 portrait and landscape
  */
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:shatayu/ui/views/contact_us/contact_us_mobile.dart';
 import 'package:shatayu/ui/views/home/home_widgets/cir.dart';
@@ -22,15 +20,13 @@ class HomeMobilePortrait extends StatefulWidget {
 
 class _HomeMobilePortraitState extends State<HomeMobilePortrait> {
 
-  CurvedNavigationBarState navBarState;
-
   final ItemScrollController itemScrollController = ItemScrollController();
   final ItemPositionsListener itemPositionsListener =
       ItemPositionsListener.create();
 
   bool _stick = false;
 
-  StickyNavBar _navBar;
+  late StickyNavBar _navBar;
   int _navIndex = 0;
 
   Widget _home(double height, double width) {

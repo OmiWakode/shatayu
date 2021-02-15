@@ -10,7 +10,7 @@ class NavBar extends StatefulWidget {
   final double width;
   final double height;
 
-  const NavBar({Key key, @required this.width, this.height}) : super(key: key);
+  const NavBar({required this.width, required this.height});
 
   @override
   _NavBarState createState() => _NavBarState();
@@ -67,7 +67,7 @@ class _NavBarState extends State<NavBar> {
                     setState(() {
                       _selectedindex = index;
                     });
-                    Navigator.of(context).push(MaterialPageRoute(
+                    Navigator.of(context)!.push(MaterialPageRoute(
                         builder: (BuildContext context) =>
                             classes[_selectedindex]));
                   }

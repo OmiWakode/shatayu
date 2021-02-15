@@ -3,7 +3,6 @@ import 'package:shatayu/enums/device_screen_type.dart';
 
 import 'responsive_builder.dart';
 
-
 class ScreenTypeLayout extends StatelessWidget {
   // Mobile will be returned by default
   final Widget mobile;
@@ -11,8 +10,7 @@ class ScreenTypeLayout extends StatelessWidget {
   final Widget desktop;
 
   const ScreenTypeLayout(
-      {Key key, @required this.mobile, this.tablet, this.desktop})
-      : super(key: key);
+      {required this.mobile, required this.tablet, required this.desktop});
 
   @override
   Widget build(BuildContext context) {

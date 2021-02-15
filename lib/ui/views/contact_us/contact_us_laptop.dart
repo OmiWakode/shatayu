@@ -14,8 +14,6 @@ class ContactUsLaptop extends StatefulWidget {
 class _ContactUsLaptopState extends State<ContactUsLaptop> {
   final CallsAndMessagesService _service = locator<CallsAndMessagesService>();
 
-
-
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;

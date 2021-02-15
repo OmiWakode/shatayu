@@ -4,12 +4,7 @@ import 'package:shatayu/widgets/top_deco.dart';
 
 import 'diseases.dart';
 
-class TreatementLaptop extends StatefulWidget {
-  @override
-  _TreatementLaptopState createState() => _TreatementLaptopState();
-}
-
-class _TreatementLaptopState extends State<TreatementLaptop> {
+class TreatementLaptop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;

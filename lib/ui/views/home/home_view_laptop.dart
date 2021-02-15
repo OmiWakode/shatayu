@@ -15,12 +15,7 @@ import 'package:shatayu/widgets/top_bar.dart';
 import 'home_widgets/bottom_home.dart';
 import 'home_widgets/home_about.dart';
 
-class HomeViewLaptop extends StatefulWidget {
-  @override
-  _HomeViewLaptopState createState() => _HomeViewLaptopState();
-}
-
-class _HomeViewLaptopState extends State<HomeViewLaptop> {
+class HomeViewLaptop extends StatelessWidget {
   final CallsAndMessagesService _service = locator<CallsAndMessagesService>();
   final String number = "+919826092380";
   final String email = "madhaviayurved@gmail.com";
@@ -30,17 +25,14 @@ class _HomeViewLaptopState extends State<HomeViewLaptop> {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
 
-
-
 // Build
     return Scaffold(
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(height / 17),
           child: TopBar(height: height, width: width)),
       body: Scrollbar(
-        isAlwaysShown: false,
-        child: ListView(
-          children: [
+          isAlwaysShown: false,
+          child: ListView(children: [
             Stack(
               children: [
                 Image(
@@ -57,7 +49,7 @@ class _HomeViewLaptopState extends State<HomeViewLaptop> {
                   height: height / 2,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 25, top: height/7),
+                  padding: EdgeInsets.only(left: 25, top: height / 7),
                   child: Image(
                     image: AssetImage('assets/shatayu.png'),
                     height: 100,
@@ -136,8 +128,7 @@ class _HomeViewLaptopState extends State<HomeViewLaptop> {
               height: height / 7,
             ),
             BottomHome(false, height: height, width: width)
-        ])
-      ),
+          ])),
     );
   }
 }

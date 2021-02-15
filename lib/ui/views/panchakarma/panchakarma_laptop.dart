@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:shatayu/ui/views/panchakarma/build_tiles.dart';
 import 'package:shatayu/widgets/top_bar.dart';
 import 'package:shatayu/widgets/top_deco.dart';
 
-import 'build_row.dart';
-import 'build_tiles.dart';
-import 'matter.dart';
-
-class PanchakarmaLaptop extends StatefulWidget {
-  @override
-  _PanchakarmaLaptopState createState() => _PanchakarmaLaptopState();
-}
-
-class _PanchakarmaLaptopState extends State<PanchakarmaLaptop> {
+class PanchakarmaLaptop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;

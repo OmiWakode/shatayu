@@ -4,7 +4,7 @@ class TopBar extends StatelessWidget {
   final double width;
   final double height;
 
-  const TopBar({Key key,@ required this.width, this.height}) : super(key: key);
+  const TopBar({required this.width, required this.height});
 
   @override
   Widget build(BuildContext context) {

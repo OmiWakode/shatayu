@@ -7,8 +7,7 @@ class TopDeco extends StatefulWidget {
   final double height;
   final String text;
 
-  const TopDeco({Key key, @required this.width, this.height, this.text})
-      : super(key: key);
+  const TopDeco({required this.width, required this.height, required this.text});
 
   @override
   _TopDecoState createState() => _TopDecoState();

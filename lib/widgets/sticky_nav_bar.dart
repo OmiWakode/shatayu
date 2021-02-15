@@ -6,7 +6,7 @@ class StickyNavBar extends StatelessWidget {
   final Function(int) onTap;
   final int index;
 
-  const StickyNavBar({Key key, this.onTap, this.index = 0}) : super(key: key);
+  const StickyNavBar({required this.onTap, this.index = 0});
 
   @override
   Widget build(BuildContext context) {
