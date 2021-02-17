@@ -31,8 +31,8 @@ class ContactUsMobile extends StatelessWidget {
           Material(
             elevation: 2,
             child: SizedBox(
-              height: height / 3,
-              width: width / 1.5,
+              height: height / 2,
+              width: width / 2,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: InkWell(
@@ -76,7 +76,7 @@ class ContactUsMobile extends StatelessWidget {
                           },
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 5),
+                          padding: EdgeInsets.only(left: 5, right: 5),
                           child: Text(
                             '+91 9826092380',
                             style: TextStyle(

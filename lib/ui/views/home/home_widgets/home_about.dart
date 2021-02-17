@@ -5,7 +5,7 @@ class HomeAbout extends StatelessWidget {
   final double height;
   final double width;
 
-  HomeAbout(bool this.mobile, {required double this.height, required double this.width});
+  HomeAbout(bool this.mobile, {required this.height, required this.width});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class HomeAbout extends StatelessWidget {
               child: Image(
                 image: AssetImage('assets/171.jpg'),
                 width: mobile ? width / 1.1 : width / 1.2,
-                height: mobile ? height * 3.7 / 3 : height * 3.3 / 3,
+                height: mobile ? height * 5 / 3 : height * 3.7 / 3,
                 fit: BoxFit.fill,
               )),
         ),
@@ -41,12 +41,27 @@ class HomeAbout extends StatelessWidget {
             Padding(
               padding: mobile
                   ? EdgeInsets.only(
-                  top: height / 30, left: width / 10, right: width / 10)
+                  top: height / 40, left: width / 10, right: width / 10)
+                  : EdgeInsets.only(left: 220, right: 220, top: 30),
+              child: Text('Experience once, trust forever..',
+                softWrap: true,
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                    fontFamily: 'GreatVibes',
+                    fontSize: mobile ? 28 : 32,
+                    fontWeight: FontWeight.w800,
+                color: Colors.red),
+              ),
+            ),
+            Padding(
+              padding: mobile
+                  ? EdgeInsets.only(
+                  top: height / 40, left: width / 10, right: width / 10)
                   : EdgeInsets.only(left: 220, right: 220, top: 30),
               child: Center(
                 child: Text(
-                  'Shatayu Ayurveda Superspeciality Clinic is an  ayurveda and panchakarma centre.'
-                      'Serving ayurvedic medicinal and panchakrma treatement for more than 15 years.',
+                  'Shatayu Ayurveda Superspeciality Clinic is an Ayurved and Panchakarma centre.'
+                      'Serving Ayurvedic medicinal and Panchakrma treatment for more than 15 years.',
                   softWrap: true,
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -54,6 +69,27 @@ class HomeAbout extends StatelessWidget {
                       fontSize: mobile ? 18 : 20,
                       fontWeight: FontWeight.w500),
                 ),
+              ),
+            ),
+            Padding(
+              padding: mobile
+                  ? EdgeInsets.only(
+                  top: height / 40, left: width / 10, right: width / 10)
+                  : EdgeInsets.only(left: 220, right: 220, top: 30),
+              child: Text(
+                    '✣ Relax '
+                    '\n'
+                    '✣ Detox'
+                    '\n'
+                    '✣ Rejuvenate'
+                    '\n'
+                    '✣ Immunity Booster',
+                softWrap: true,
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                    fontFamily: 'Baloo',
+                    fontSize: mobile ? 18 : 20,
+                    fontWeight: FontWeight.w500),
               ),
             ),
             Padding(
@@ -80,8 +116,8 @@ class HomeAbout extends StatelessWidget {
               child: Center(
                 child: Text(
                   'For health and beauty, the world has seen the ill effects of chemicals and medicines. Today man is coming back to nature. '
-                      'Ayurveda is India\'s 5000 year old medical practice,which makes life healthy and balanced. '
-                      'It is not only medical practice, it is the science of life, which teaches us how to live life.',
+                      'Ayurved is India\'s 5000 year old traditional practice,which makes life healthy and balanced. '
+                      'It is not only a treatment, it is the science of life, which teaches us how to live a healthy life.',
                   softWrap: true,
                   style: TextStyle(
                       fontFamily: 'Baloo',
@@ -116,9 +152,8 @@ class HomeAbout extends StatelessWidget {
               child: Center(
                 child: Text(
                   'Our body is a machine, which requires  regular Oiling'
-                      ' and servicing for proper it\'s functioning. This work can only be fulfilled by Panchakarma, '
-                      ' thereby boosting Our Immune System'
-                      ' and thus the reducing the chance of potential diseases affecting us',
+                      ' and Servicing for proper functioning. This work can only be fulfilled by Panchakarma, '
+                      ' boosting Our immune system.',
                   softWrap: true,
                   style: TextStyle(
                       fontFamily: 'Baloo',

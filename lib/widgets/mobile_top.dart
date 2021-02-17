@@ -19,7 +19,7 @@ class MobileTop extends StatelessWidget {
           fit: BoxFit.fill,
         ),
         Padding(
-          padding: EdgeInsets.only(left: width/10, top: height/7),
+          padding: EdgeInsets.only(left: width/10, top: height/6),
           child: Image.asset('assets/shatayu.png',
             width: 50,
           ),

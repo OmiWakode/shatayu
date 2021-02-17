@@ -49,7 +49,7 @@ class HomeViewLaptop extends StatelessWidget {
                   height: height / 2,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 25, top: height / 7),
+                  padding: EdgeInsets.only(left: 25, top: height / 6),
                   child: Image(
                     image: AssetImage('assets/shatayu.png'),
                     height: 100,
@@ -82,21 +82,8 @@ class HomeViewLaptop extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: width / 10, top: height / 2.5),
-                  child: Text(
-                    'Serving since 15 years..',
-                    style: TextStyle(
-                        fontFamily: 'GreatVibes',
-                        color: Color.fromRGBO(46, 139, 87, 1),
-                        fontSize: 40,
-                        fontWeight: FontWeight.w500),
-                  ),
-                ),
                 NavBar(height: height, width: width),
 /*
-
-
 */
               ],
             ),

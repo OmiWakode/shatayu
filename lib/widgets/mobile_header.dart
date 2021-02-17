@@ -11,7 +11,7 @@ class MobileHeader extends StatelessWidget {
         Image(
           image: AssetImage('assets/light-green-background-wallpaper-3.jpg'),
           fit: BoxFit.fill,
-          height: height / 3.3,
+          height: height / 3.2,
           width: width,
         ),
         Image(
@@ -54,17 +54,6 @@ class MobileHeader extends StatelessWidget {
               color: //Colors.white
               Color.fromRGBO(1, 60, 30, 1),
             ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(left: width / 5.7, top: height / 3.9),
-          child: Text(
-            'Serving since 15 years..',
-            style: TextStyle(
-                fontFamily: 'GreatVibes',
-                color: Color.fromRGBO(46, 139, 87, 1),
-                fontSize: 22,
-                fontWeight: FontWeight.w500),
           ),
         ),
       ],

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shatayu/responsive/orientation_layout.dart';
-import 'package:shatayu/responsive/responsive_builder.dart';
 import 'package:shatayu/responsive/screen_type_layout.dart';
 
 import 'home_view_laptop.dart';

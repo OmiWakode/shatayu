@@ -18,7 +18,7 @@ class Diseases extends StatelessWidget {
               ? EdgeInsets.only(left: width / 20, top: 10)
               : EdgeInsets.only(left: width / 10, top: height / 20),
           child: Text(
-            ' Vata Roga - Rheumatic diseases: relieve pain without operation',
+            ' Vata Roga - Pain Releif',
             style: TextStyle(
                 fontFamily: 'Baloo',
                 fontSize: 18,
@@ -39,15 +39,15 @@ class Diseases extends StatelessWidget {
                 Text(
                   '✣ Arthritis'
                   '\n'
-                  '✣ Migraine'
+                      '✣ Rheumatoid '
+                      '\n'
+                      '     Arthritis'
                   '\n'
                   '✣ Slip Disk'
                   '\n'
                   '✣ Back ache'
                   '\n'
-                  '✣ Rheumatoid '
-                  '\n'
-                  '     Arthritis (गठिया)',
+                  ,
                   softWrap: true,
                   style: TextStyle(
                       fontFamily: 'Baloo',
@@ -61,15 +61,13 @@ class Diseases extends StatelessWidget {
                   child: Text(
                       '✣ Neck pain '
                       '\n'
-                      '✣ Cytica '
+                      '✣ Sciatica'
                       '\n'
                       '✣ Frozen Shoulder'
                       '\n'
-                      '✣ Intravenous stretch / '
+                          '✣ Migraine'
                       '\n'
-                      '    pressure (नसों में खिंचाव/'
-                      '\n'
-                      '                             दबाव)',
+                      '✣ And others',
                       softWrap: true,
                       style: TextStyle(
                           fontFamily: 'Baloo',
@@ -83,7 +81,7 @@ class Diseases extends StatelessWidget {
               ? EdgeInsets.only(left: width / 20, top: height / 15)
               : EdgeInsets.only(left: width / 10, top: height / 20),
           child: Text(
-            ' Skin Diseases: Effective and permanent treatment',
+            ' Skin Disorders:  Effective treatment',
             style: TextStyle(
                 fontFamily: 'Baloo',
                 fontSize: 18,
@@ -106,7 +104,11 @@ class Diseases extends StatelessWidget {
                 '\n'
                 '✣ Allergy'
                 '\n'
-                '✣ Acne, Pimples, Boils',
+                '✣ Acne, Pimples, Boils'
+                '\n'
+                    '✣ Baldness,'
+                    '\n'
+                    '✣ Hairfall',
                 style: TextStyle(
                     fontFamily: 'Baloo',
                     fontSize: mobile ? 15 : 17,
@@ -136,7 +138,7 @@ class Diseases extends StatelessWidget {
               ? EdgeInsets.only(top: height / 15)
               : EdgeInsets.only(left: width / 10, top: height / 20),
           child: Text(
-            'Stomach diseases - Digest your worries',
+            'Digestive disorders - Digest your worries',
             style: TextStyle(
                 fontFamily: 'Baloo',
                 fontSize: 18,
@@ -176,7 +178,7 @@ class Diseases extends StatelessWidget {
                 child: Text(
                   '✣ Diarrhoea '
                   '\n'
-                  '✣ Ulcera'
+                  '✣ Ulcer colitis'
                   '\n'
                   '✣ Acidity',
                   style: TextStyle(
@@ -193,7 +195,7 @@ class Diseases extends StatelessWidget {
               ? EdgeInsets.only(top: height / 15)
               : EdgeInsets.only(left: width / 10, top: height / 20),
           child: Text(
-            ' Women\'s Disease',
+            ' Women\'s Disorders',
             style: TextStyle(
                 fontFamily: 'Baloo',
                 fontSize: 18,
@@ -248,7 +250,7 @@ class Diseases extends StatelessWidget {
               ? EdgeInsets.only(top: height / 15)
               : EdgeInsets.only(left: width / 10, top: height / 20),
           child: Text(
-            ' Other Diseases\' Effective Treatement',
+            ' Other Diseases',
             style: TextStyle(
                 fontFamily: 'Baloo',
                 fontSize: 18,
@@ -274,8 +276,7 @@ class Diseases extends StatelessWidget {
                   '✣ Obesity'
                   '\n'
                   '✣ Blood pressure'
-                  '\n'
-                  '✣ Appendicitis, stones',
+                  '\n',
                   style: TextStyle(
                       fontFamily: 'Baloo',
                       fontSize: mobile ? 15 : 17,
@@ -290,11 +291,8 @@ class Diseases extends StatelessWidget {
                       '\n'
                       '✣ Eye disease'
                       '\n'
-                      '✣ Thyroid'
-                      '\n'
-                      '✣ Baldness,'
-                      '\n'
-                      '    Hairfall',
+                      '✣ Thyroid',
+
                       style: TextStyle(
                           fontFamily: 'Baloo',
                           fontSize: mobile ? 15 : 17,
@@ -317,7 +315,7 @@ class Diseases extends StatelessWidget {
         ),
         Center(
           child: Text(
-            'Specially for pregnant women and infants',
+            'Speciality Treatment for pregnant women and infants',
             textAlign: TextAlign.center,
             softWrap: true,
             style: TextStyle(
@@ -333,9 +331,9 @@ class Diseases extends StatelessWidget {
                 mobile ? EdgeInsets.only(left: width / 20) : EdgeInsets.all(0),
             child: Text(
               '\n'
-              '✣ Garbh Sanskar (गर्भ संस्कार)- For better development of the child in the womb'
+              '✣ Garbh Sanskar (गर्भ संस्कार)- For better development of child in the womb'
               '\n'
-              '✣ Suvarna Prashana(सुवर्ण प्राशन संस्कार) (0- 8 year kids): For increasing the child\'s immunity and intelligence',
+              '✣ Suvarna Prashana(सुवर्ण प्राशन संस्कार) (0- 12 year kids): For increasing the child\'s immunity and intelligence',
               softWrap: true,
               //textAlign: TextAlign.center,
               style: TextStyle(
