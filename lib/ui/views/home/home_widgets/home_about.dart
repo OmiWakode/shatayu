@@ -17,7 +17,7 @@ class HomeAbout extends StatelessWidget {
               child: Image(
                 image: AssetImage('assets/171.jpg'),
                 width: mobile ? width / 1.1 : width / 1.2,
-                height: mobile ? height * 5 / 3 : height * 3.7 / 3,
+                height: mobile ? height * 5 / 3 : height * 4 / 3,
                 fit: BoxFit.fill,
               )),
         ),
