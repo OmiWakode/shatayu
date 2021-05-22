@@ -1,5 +1,5 @@
 # shatayu
-[shatayuatyurved.org](shatayuayurved.org)
+[shatayuayurved.org](https://shatayuayurved.org/#/)
 
 A responsive web Application built using flutter web.
 
